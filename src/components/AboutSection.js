@@ -13,14 +13,15 @@ const AboutSection = ({ setSectionIsVisible }) => {
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
             setSectionIsVisible(entry.isIntersecting);
+            console.log("entry: ", entry)
         });
         observer.observe(aboutSectionRef.current);
     })
 
     return (
-        <AboutSectionStyle>
-            <div className="container" ref={aboutSectionRef}>
-                <div className="aboutSection__left">
+        <AboutSectionStyle ref={aboutSectionRef}>
+            <div className="container">
+                <div className="aboutMe">
                     <SectionTitle subheading="Let me introduce myself"
                                   heading="About me"
                     />
@@ -53,13 +54,14 @@ export default AboutSection;
 
 const AboutSectionStyle = styled.div`
   padding: 10rem 0;
+  margin-top: 0.5rem;
   .container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     text-align: left;
   }
-  .aboutSection__left, .aboutSection__right {
+  .aboutMe, .recentNews {
     flex: 1;
   }
   .section__title {

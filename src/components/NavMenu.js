@@ -10,10 +10,10 @@ const NavMenu = ({ aboutSectionIsVisible }) => {
     useEffect(() => {}, [aboutSectionIsVisible]);
 
     return (
-        <NavMenuStyles className={aboutSectionIsVisible ? '' : 'transparent'}>
+        <NavMenuStyles aboutSectionIsVisible={aboutSectionIsVisible}>
             <div className='navBarContainer'>
                 <div className="navBarTitle">
-                    <h4>Ben Kosa</h4>
+                    <h4>BEN KOSA</h4>
                 </div>
                 <ul className='navItems'>
                     <li>
@@ -71,10 +71,16 @@ const NavMenuStyles = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 11rem;
+  height: ${props => props.aboutSectionIsVisible ? "7rem" : "9rem"};
   padding: 1rem 0;
   box-shadow: 0 -1px 0 rgb(255 255 255 / 10%) inset;
   
+  background-color: ${props => props.aboutSectionIsVisible ? "white" : "transparent"};
+  transition: .4s ease background-color, .4s ease height;
+  
+  display: flex;
+  align-items: center;
+
   .navBarContainer {
     width: 1170px;
     margin-right: auto;
@@ -109,7 +115,7 @@ const NavMenuStyles = styled.div`
     }
     
     .active {
-      color: var(--white);
+      color: ${props => props.aboutSectionIsVisible ? "black" : "white"};;
     }
   }
   
@@ -117,12 +123,8 @@ const NavMenuStyles = styled.div`
     display: inline-block;
     font-family: 'Dosis Regular';
     padding: 1rem 1rem;
-    font-size: 4rem;
-    color: #FFFFFF;
-  }
-  
-  .transparent {
-    background-color: transparent;
+    font-size: 2.4rem;
+    color: ${props => props.aboutSectionIsVisible ? "black" : "white"};
   }
   
   .mobile-menu-icon {
