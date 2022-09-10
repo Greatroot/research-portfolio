@@ -49,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
   .container {
     max-width: 1200px;
     width: 90%;
-    margin: 0 auto;
+    //margin: 0 auto;
   }
   
   /* Smooth Scroll */

@@ -6,7 +6,7 @@ const SectionTitle = ({ subheading = 'This is subheading', heading = 'This is he
     // See how we are injecting the styles from a parent component here (i.e. AboutSection).
     return (
         <SectionTitleStyle className="section__title">
-            <p>{subheading}</p>
+            {/*<p>{subheading}</p>*/}
             <h2>{heading}</h2>
         </SectionTitleStyle>
     );
@@ -21,8 +21,8 @@ const SectionTitleStyle = styled.div`
     font-size: 2rem;
   }
   h2 {
-    font-family: 'Montserrat Bold';
-    font-size: 6rem;
+    font-family: 'Dosis SemiBold';
+    font-size: 3rem;
     margin-top: .5rem;
     text-transform: uppercase;
   }
